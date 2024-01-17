@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: white;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        /* background-color: rgb(61, 60, 63); */
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .squareContainer {
+        min-width: 100%;
+        min-height: 10px;
+        /* background-color: blue; */
+    }
+
+    .square {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        margin-left: -10%;
+        /* background-color: blueviolet; */
+        transition: margin-left .5s ease-in-out;
+    }
+
+    .pos {
+        /* background-color: red; */
+        min-width: 40px;
+        min-height: 40px;
+        position: relative;
+
+    }
+
+    .animationRotate {
+        animation: anima 2s both;
+        transform-origin: center;
+    }
+
+    .pos:nth-child(2) {
+        & .square:nth-child(2n+1) {
+
+            background-color: rgb(31, 96, 180);
+        }
+
+        & .square:nth-child(2) {
+            background-color: rgb(70, 134, 219);
+        }
+    }
+
+    .pos:nth-child(2n+1) {
+
+        /* background-color: aqua; */
+        & .square:nth-child(2n+1) {
+            background-color: rgb(70, 134, 219);
+        }
+
+        & .square:nth-child(2) {
+            background-color: rgb(31, 96, 180);
+        }
+    }
+
+
+
+    @keyframes anima {
+        0% {
+
+            transform-origin: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+
+    }
+
+    @keyframes anima2 {
+        0% {
+            margin-left: 0%
+        }
+
+        50% {
+            margin-left: 0%,
+        }
+
+        100% {
+            margin-left: 50%;
+        }
+    }
+</style>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* .container {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        gap: 10px;
+    } */
+
+    /* .girl {
+        width: 10%;
+    } */
+
+    .gifLoading {
+        width: 10%;
+    }
+
+    .loading {
+        width: 5%;
+    }
+
+    .elements {
+        display: grid;
+        position: relative;
+        place-items: center;
+        width: 100%;
+        height: 20vh;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="elements">
+            <img class="girl" src="/gifs/loading1.gif" alt="" srcset="">
+            <!-- <img class="gifLoading" src="" alt="" srcset=""> -->
+        </div>
+        <div class="squareContainer">
+            <div class="pos">
+                <div class="square number1"></div>
+                <div class="square number2"></div>
+                <div class="square number3"></div>
+            </div>
+            <div class="pos">
+                <div class="square number4"></div>
+                <div class="square number5"></div>
+                <div class="square number6"></div>
+            </div>
+            <div class="pos">
+                <div class="square number7"></div>
+                <div class="square number8"></div>
+                <div class="square number9"></div>
+            </div>
+        </div>
+        <div class="cargando">
+            <!-- <img class="loading" src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" alt=""
+                srcset=""> -->
+            CARGANDO...
+
+        </div>
+    </div>
+    <script>
+
+        // animar(porcentaje)
+        const squares = document.querySelectorAll('.square')
+        const squareContainer = document.querySelector('.squareContainer')
+        timeAnimtion()
+        setInterval(() => {
+            timeAnimtion()
+        }, 8700)
+
+        function timeAnimtion() {
+            animar(50)
+            setTimeout(() => {
+                animar(150)
+            }, 5000)
+            setTimeout(() => {
+                squareContainer.classList.add('animationRotate')
+            }, 3700)
+            setTimeout(() => {
+                squareContainer.classList.remove('animationRotate')
+            }, 4900)
+            setTimeout(() => {
+                // const squares = document.querySelectorAll('.square')
+                squares.forEach(v => {
+                    v.style = 'display:none; margin-left: -10%'
+                })
+            }, 8500)
+            setTimeout(() => {
+                squares.forEach(square => {
+                    square.style = 'display: block;'
+                })
+                first = false
+            }, 8600)
+        }
+
+        function animar(porc) {
+            const elements = document.querySelectorAll('.pos')
+
+            elements.forEach((v, index) => {
+                const squere = v.querySelectorAll('.square:nth-last-child(-n+3)')
+                const array = []
+                squere.forEach(v => {
+                    array.push(v)
+                })
+                setTimeout(() => {
+                    array.reverse().forEach((v, index) => {
+                        setTimeout(() => {
+                            const num = 40 * (index + 1)
+                            // console.log(num)
+                            v.style = `margin-left: calc(${porc}% - ${num}px + 60px);`
+                        }, 400 * index)
+                    })
+                }, 1200 * index)
+
+            })
+        }
+
+    </script>
+    <script>
+        // const img = document.querySelector(".gifLoading")
+        // const imgs = [
+        //     "./public/gifs/loading1.gif",
+        //     "./public/gifs/loading2.gif",
+        //     "./public/gifs/loading3.gif",
+        //     "./public/gifs/loading4.gif",
+        //     "./public/gifs/loading5.gif",
+        // ]
+        // function getImg() {
+        //     const numeroAleatorio = Math.floor(Math.random() * imgs.length) + 1;
+        //     console.log(numeroAleatorio)
+        //     img.src = imgs[numeroAleatorio - 1]
+        // }
+
+        // getImg()
+
+    </script>
+
+</body>
+
+</html>

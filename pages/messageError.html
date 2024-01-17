@@ -1,0 +1,45 @@
+<div class="messageError">
+    <div class="message">
+        este es un mensaje de error
+    </div>
+    <style>
+        .messageError {
+            width: 20rem;
+            min-height: 5rem;
+            position: fixed;
+            left: 100%;
+            top: 10%;
+            background-color: brown;
+            padding: 1rem 4rem 1rem 2rem;
+            box-sizing: border-box;
+            border-radius: 10px 0 0 10px;
+            z-index: 999999999;
+            transition: left .5s;
+        }
+
+        .message {
+            color: white;
+            font-size: 1.2em;
+            /* background-color: blueviolet; */
+        }
+
+        .openMessage {
+            /* animation: left 2s; */
+            left: calc(100% - 20rem) !important;
+            /* right: 0% !important; */
+        }
+    </style>
+    <script>
+        const messageError = document.querySelector('.messageError')
+
+        setTimeout(() => {
+            messageError.classList.add("openMessage")
+            // messageError.classList.toggle('openMessage')
+        }, 500);
+        setTimeout(() => {
+            messageError.classList.toggle("openMessage")
+            // messageError.classList.toggle('openMessage')
+        }, 5000);
+
+    </script>
+</div>

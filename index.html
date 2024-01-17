@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+  <script type="module" crossorigin src="/assets/page1-e228bcdb.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/handleMessageError-d8b4ec4d.js">
+  <link rel="stylesheet" href="/assets/handleMessageError-a6f1ff3e.css">
+  <link rel="stylesheet" href="/assets/index-4682a54b.css">
+</head>
+
+<body>
+    <script>
+        const token = localStorage.getItem("token")
+        token ? null : window.location.href = "./pages/session.html"
+        // fetch('http://localhost:3000/login')
+        //     .then(data => data.json())
+        //     .then(result => {
+        //         console.log(result)
+        //         if (user != "alejandro") {
+        //             window.location.href = "session.html"
+        //         }
+        //     })
+        //     .catch(error => {
+        //         alert(error)
+        //         window.location.href = "session.html"
+
+        //     })
+    </script>
+    <div class="wall"></div>
+    <iframe srcdoc='' frameborder="0"></iframe>
+</body>
+<!-- contenedor del editor monaco -->
+<div class="htmlEdit htmlEditorClosed">
+    <div class="editors-container">
+        <div class="saveAndClose-container">
+            <button class="saveCodeEditor">save</button>
+            <div class="closeEditorIntern">x</div>
+        </div>
+        <div class="editorSelectContainer">
+
+            <div class="editorSelect htmlSelect">
+                html
+            </div>
+
+            <div class="editorSelect cssSelect">
+                css
+            </div>
+
+            <div class="editorSelect javascriptSelect">
+                javascript
+            </div>
+        </div>
+        <div id="html" class="">
+            <div class="title">html</div>
+        </div>
+        <div id="css" class="editHidden">
+            <div class="title">css</div>
+        </div>
+        <div id="javascript" class="editHidden">
+            <div class="title">javascript</div>
+        </div>
+    </div>
+
+</div>
+</div>
+<!-- ********** -->
+<div class="bot rootHidden">
+
+    <div class="menu menuHidden">
+        <ul>
+            <li class="download">descargar archivos</li>
+            <li>
+                <select name="" id="" class="GptModelSelect">
+                    <option value="gpt3">Gpt-3.5</option>
+                    <option value="gpt4">Gpt-4</option>
+                </select>
+            </li>
+            <li class="closeSession">cerrar session</li>
+            <li>
+                <input type="text" class="tokenGpt" placeholder="ingresa el token">
+                <button class="saveTokenGpt">guardar</button>
+            </li>
+        </ul>
+        <button hidden class="download">download</button>
+        <button hidden class="closeSession">cerrar session</button>
+    </div>
+    <!-- <button id="downloadtest">download</button> -->
+    <!-- <a class="download" href="./loading.html" download="index.png">descargar archivo</a> -->
+    <div class="actionsContainer">
+        <button class="openEditor">Editar Codigo</button>
+        <button class="preview">retroceder</button>
+        <button class="reset">resetear</button>
+        <div class="buttonMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="root">
+        <div class="input-container">
+            <textarea id="pidemeTextarea" rows="1" cols="3" placeholder="Crea tu pagina..." cols="30"
+                rows="10"></textarea>
+            <!-- <input id="pidemeTextarea" type="text"> -->
+            <button class="build">Enter</button>
+        </div>
+    </div>
+    <div class="open-close">
+        <dv class="svgContainer">
+            <svg fill="#ffffff" height="200px" width="200px" version="1.1" id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 460.77 460.77" xml:space="preserve" stroke="#ffffff" stroke-width="0.00460775">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z">
+                    </path>
+                </g>
+            </svg>
+        </dv>
+    </div>
+</div>
+
+<!-- <script type="module" src="./editor.js"></script> -->
+
+
+
+
+<div class="messageError">
+    <div class="closeErrorMessage">x</div>
+    <div class="message">
+    </div>
+</div>
+<!-- <button class="showCode">show</button>
+        
+        <input class="file" type="file">
+        
+        
+        <p>Pide como contruir tu pagina</p>
+        <div class="historial">
+            <textarea name="" placeholder="asdasd" readonly id="" cols="30" rows="10"></textarea>
+            <textarea name="" readonly id="" cols="30" rows="10"></textarea>
+            <textarea name="" readonly id="" cols="30" rows="10"></textarea>
+            <textarea name="" readonly id="" cols="30" rows="10"></textarea>
+            <textarea name="" readonly id="" cols="30" rows="10"></textarea>
+            <textarea name="" placeholder="asdsd" readonly id="" cols="30" rows="10"></textarea>
+        </div>
+         -->
+
+</html>
