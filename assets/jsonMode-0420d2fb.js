@@ -1,4 +1,4 @@
-var Ge=Object.defineProperty;var Qe=(e,n,i)=>n in e?Ge(e,n,{enumerable:!0,configurable:!0,writable:!0,value:i}):e[n]=i;var C=(e,n,i)=>(Qe(e,typeof n!="symbol"?n+"":n,i),i);import{m as Ze}from"./handleMonacoEditor-ee3b082e.js";import"./page1-e228bcdb.js";import"./handleMessageError-d8b4ec4d.js";/*!-----------------------------------------------------------------------------
+var Ge=Object.defineProperty;var Qe=(e,n,i)=>n in e?Ge(e,n,{enumerable:!0,configurable:!0,writable:!0,value:i}):e[n]=i;var C=(e,n,i)=>(Qe(e,typeof n!="symbol"?n+"":n,i),i);import{m as Ze}from"./handleMonacoEditor-53955eaa.js";import"./page1-742dddd5.js";import"./handleMessageError-d8b4ec4d.js";/*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Version: 0.43.0(94c055bcbdd49f04a0fa15515e848542a79fb948)
  * Released under the MIT license
