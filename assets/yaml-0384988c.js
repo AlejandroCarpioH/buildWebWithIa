@@ -1,4 +1,4 @@
-import{m as i}from"./handleMonacoEditor-b3ca8a27.js";import"./page1-cc594e2e.js";import"./handleMessageError-8a94c122.js";/*!-----------------------------------------------------------------------------
+import{m as i}from"./handleMonacoEditor-19547a1f.js";import"./page1-d285bbb1.js";import"./handleMessageError-8a94c122.js";/*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Version: 0.43.0(94c055bcbdd49f04a0fa15515e848542a79fb948)
  * Released under the MIT license
